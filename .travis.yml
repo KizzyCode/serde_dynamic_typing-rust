@@ -1,6 +1,6 @@
 language: rust
 rust:
-  - stable
+  - nightly
 
 arch:
   - amd64
@@ -19,5 +19,5 @@ compiler:
   - clang
 
 script:
-  - cargo test --verbose
-  - cargo test --verbose --release
+  - cargo +nightly test --verbose
+  - cargo +nightly test --verbose --release
