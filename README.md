@@ -1,13 +1,13 @@
-[![docs.rs](https://docs.rs/serde_dynamic_types/badge.svg)](https://docs.rs/serde_dynamic_types)
+[![docs.rs](https://docs.rs/serde_dynamic_typing/badge.svg)](https://docs.rs/serde_dynamic_typing)
 [![License BSD-2-Clause](https://img.shields.io/badge/License-BSD--2--Clause-blue.svg)](https://opensource.org/licenses/BSD-2-Clause)
 [![License MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![crates.io](https://img.shields.io/crates/v/serde_dynamic_types.svg)](https://crates.io/crates/serde_dynamic_types)
-[![Download numbers](https://img.shields.io/crates/d/serde_dynamic_types.svg)](https://crates.io/crates/serde_dynamic_types)
-[![AppVeyor CI](https://ci.appveyor.com/api/projects/status/github/KizzyCode/serde_dynamic_types-rust?svg=true)](https://ci.appveyor.com/project/KizzyCode/serde-dynamic-types-rust)
-[![dependency status](https://deps.rs/crate/serde_dynamic_types/0.1.0/status.svg)](https://deps.rs/crate/serde_dynamic_types/0.1.0)
+[![crates.io](https://img.shields.io/crates/v/serde_dynamic_typing.svg)](https://crates.io/crates/serde_dynamic_typing)
+[![Download numbers](https://img.shields.io/crates/d/serde_dynamic_typing.svg)](https://crates.io/crates/serde_dynamic_typing)
+[![AppVeyor CI](https://ci.appveyor.com/api/projects/status/github/KizzyCode/serde_dynamic_typing-rust?svg=true)](https://ci.appveyor.com/project/KizzyCode/serde-dynamic-typing-rust)
+[![dependency status](https://deps.rs/crate/serde_dynamic_typing/0.1.0/status.svg)](https://deps.rs/crate/serde_dynamic_typing/0.1.0)
 
-# `serde_dynamic_types`
-Welcome to `serde_dynamic_types` 🎉
+# `serde_dynamic_typing`
+Welcome to `serde_dynamic_typing` 🎉
 
 This crate implements a simplified `serde`-compatible type model which offers a simplified representation of various
 Rust data structures and allows dynamic runtime inspection. The type model can also be used as intermediate
@@ -18,14 +18,14 @@ Since Rust is a compiled language, it makes runtime inspection and modification 
 alternatives such as `Box<dyn Any>` or `serde`, however the first is mostly used to implement dynamic interfaces, the
 latter is mostly designed to offer (de-)serialization of predefined static data structures.
 
-`serde_dynamic_types` sits somewhere in the middle: On one side it behaves similar to `Any` since it offers a simplified
+`serde_dynamic_typing` sits somewhere in the middle: On one side it behaves similar to `Any` since it offers a simplified
 type model which can be used to build and inspect nearly arbitrarily complex data structures dynamically at runtime. On
 the other side it strives to be compatible with `serde` and `serde_derive`, so that you can transform supported Rust
 types and structs to `AnyValue` and vice-versa.
 
 Furthermore it can also serve as a simplifying abstraction layer for `serde`: While `serde` is extremely versatile and
 efficient, it also requires more a complex type model and implementation. If you just want to write a simple
-(de-)serializer without the need for the efficiency and features `serde` offers, `serde_dynamic_types` can greatly
+(de-)serializer without the need for the efficiency and features `serde` offers, `serde_dynamic_typing` can greatly
 simplify the implementation.
 
 
