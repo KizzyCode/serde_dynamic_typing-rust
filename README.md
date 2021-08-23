@@ -3,7 +3,6 @@
 [![License MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![crates.io](https://img.shields.io/crates/v/serde_dynamic_types.svg)](https://crates.io/crates/serde_dynamic_types)
 [![Download numbers](https://img.shields.io/crates/d/serde_dynamic_types.svg)](https://crates.io/crates/serde_dynamic_types)
-[![Travis CI](https://travis-ci.org/KizzyCode/serde_dynamic_types-rust.svg?branch=master)](https://travis-ci.org/KizzyCode/serde_dynamic_types-rust)
 [![AppVeyor CI](https://ci.appveyor.com/api/projects/status/github/KizzyCode/serde_dynamic_types-rust?svg=true)](https://ci.appveyor.com/project/KizzyCode/serde-dynamic-types-rust)
 [![dependency status](https://deps.rs/crate/serde_dynamic_types/0.1.0/status.svg)](https://deps.rs/crate/serde_dynamic_types/0.1.0)
 
