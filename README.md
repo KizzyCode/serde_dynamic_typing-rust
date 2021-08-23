@@ -48,7 +48,7 @@ The simplified types are:
 Furthermore there is a "generic" enum-type `AnyValue` which can hold any value of the types above.
 
 For example, a struct like
-```
+```rust
 #[derive(Serialize, Deserialize)]
 struct ByteContainer {
     #[serde(with = "serde_bytes")]
@@ -56,7 +56,7 @@ struct ByteContainer {
 }
 ```
 is represented as
-```
+```rust
 AnyValue::Map([
     (
         AnyValue::Utf8String(Utf8String::new("bytes")),      // <- map key
