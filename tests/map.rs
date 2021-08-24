@@ -10,8 +10,8 @@ fn map() {
     ]);
     let expected = AnyValue::Map(
         Map::from_iter(vec![
-            (Utf8String::new("Key0").into(), Integer::from(0).into()),
-            (Utf8String::new("Key1").into(), Integer::from(1).into())
+            (Utf8String::from("Key0").into(), Integer::from(0).into()),
+            (Utf8String::from("Key1").into(), Integer::from(1).into())
         ])
     );
 

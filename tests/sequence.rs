@@ -10,8 +10,8 @@ fn sequence() {
     ];
     let expected = AnyValue::Sequence(
         Sequence::from_iter(vec![
-            Utf8String::new("Key0").into(),
-            Utf8String::new("Key1").into()
+            Utf8String::from("Key0").into(),
+            Utf8String::from("Key1").into()
         ])
     );
 

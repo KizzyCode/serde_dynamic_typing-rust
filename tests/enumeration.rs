@@ -13,7 +13,7 @@ fn enum_unit() {
 
     let value = UnitEnum::VariantA;
     let expected = AnyValue::Enum(
-        Enumeration::new("VariantA")
+        Enumeration::from("VariantA")
     );
 
     let serialized = serde_dynamic_typing::to_typed(&value).expect("Failed to serialize enum");
@@ -36,7 +36,7 @@ fn enum_newtype() {
     let expected = AnyValue::Enum(
         Enumeration::with_value(
             "VariantA",
-            Utf8String::new("ValueA")
+            Utf8String::from("ValueA")
         )
     );
 

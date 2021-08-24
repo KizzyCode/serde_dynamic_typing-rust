@@ -47,6 +47,16 @@ impl Enumeration {
         (self.variant, *self.value)
     }
 }
+impl From<String> for Enumeration {
+    fn from(value: String) -> Self {
+        Self::new(value)
+    }
+}
+impl From<&str> for Enumeration {
+    fn from(value: &str) -> Self {
+        Self::new(value)
+    }
+}
 impl TryFrom<AnyValue> for Enumeration {
     type Error = Error;
     fn try_from(value: AnyValue) -> Result<Self> {
