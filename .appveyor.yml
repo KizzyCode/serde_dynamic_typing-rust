@@ -1,8 +1,3 @@
-image:
-  - Visual Studio 2019
-  - Ubuntu2004
-  - macOS
-
 environment:
   matrix:
     - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
@@ -32,14 +27,14 @@ for:
         - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu2004
     init:
       - curl https://sh.rustup.rs -sSf -o rustup-init.sh
-      - sh rustup-init.sh -y --default-toolchain nightly --default-host %TARGET%
+      - sh rustup-init.sh -y --default-toolchain nightly --default-host $TARGET
   
   - matrix:
       only:
         - APPVEYOR_BUILD_WORKER_IMAGE: macOS
     init:
       - curl https://sh.rustup.rs -sSf -o rustup-init.sh
-      - sh rustup-init.sh -y --default-toolchain nightly --default-host %TARGET%
+      - sh rustup-init.sh -y --default-toolchain nightly --default-host $TARGET
 
 build: false
 
