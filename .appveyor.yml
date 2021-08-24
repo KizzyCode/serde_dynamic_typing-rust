@@ -1,17 +1,33 @@
-image: Visual Studio 2019
-
-environment:
-  matrix:
-    - TARGET: x86_64-pc-windows-msvc
-    - TARGET: i686-pc-windows-msvc
-
-install:
-  - appveyor DownloadFile https://win.rustup.rs/ -FileName rustup-init.exe
-  - rustup-init.exe -y --default-toolchain nightly --default-host %TARGET%
-  - set PATH=%PATH%;C:\Users\appveyor\.cargo\bin
+for:
+  - image: Visual Studio 2019
+    environment:
+      matrix:
+        - TARGET: x86_64-pc-windows-msvc
+        - TARGET: i686-pc-windows-msvc
+    init:
+      - appveyor DownloadFile https://win.rustup.rs/ -FileName rustup-init.exe
+      - rustup-init.exe -y --default-toolchain nightly --default-host %TARGET%
+      - set PATH=%PATH%;C:\Users\appveyor\.cargo\bin
+  
+  - image: Ubuntu2004
+    environment:
+      matrix:
+        - TARGET: x86_64-unknown-linux-gnu
+        - TARGET: i686-unknown-linux-gnu
+    init:
+      - curl https://sh.rustup.rs -sSf -o rustup-init.sh
+      - sh rustup-init.sh -y --default-toolchain nightly --default-host %TARGET%
+  
+  - image: macOS
+    environment:
+      matrix:
+        - TARGET: x86_64-apple-darwin
+    init:
+      - curl https://sh.rustup.rs -sSf -o rustup-init.sh
+      - sh rustup-init.sh -y --default-toolchain nightly --default-host %TARGET%
 
 build: false
 
 test_script:
-  - cargo +nightly test --verbose
-  - cargo +nightly test --verbose --release
+  - cargo test --verbose
+  - cargo test --verbose --release
