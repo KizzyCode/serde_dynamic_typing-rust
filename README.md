@@ -14,18 +14,18 @@ Rust data structures and allows dynamic runtime inspection. The type model can a
 representation for custom serializers etc.
 
 ## Why?
-Since Rust is a compiled language, it makes runtime inspection and modification basically impossible. There are powerful
-alternatives such as `Box<dyn Any>` or `serde`, however the first is mostly used to implement dynamic interfaces, the
-latter is mostly designed to offer (de-)serialization of predefined static data structures.
+Since the Rust compiler erases most type information, it makes runtime inspection and modification basically impossible.
+There are some powerful ways such as the `Any`-trait or `serde`, however the first is mostly useful to implement dynamic
+interfaces whereas the latter is designed to offer (de-)serialization of predefined static data structures.
 
-`serde_dynamic_typing` sits somewhere in the middle: On one side it behaves similar to `Any` since it offers a simplified
-type model which can be used to build and inspect nearly arbitrarily complex data structures dynamically at runtime. On
-the other side it strives to be compatible with `serde` and `serde_derive`, so that you can transform supported Rust
-types and structs to `AnyValue` and vice-versa.
+`serde_dynamic_typing` sits somewhere in the middle: On one side it behaves similar to `Any` since it offers a
+simplified type model which can be used to build and inspect nearly arbitrarily complex data structures dynamically at
+runtime. On the other side it strives to be compatible with `serde` and `serde_derive`, so that you can transform
+existing Rust types and structs to `AnyValue` and vice-versa.
 
-Furthermore it can also serve as a simplifying abstraction layer for `serde`: While `serde` is extremely versatile and
-efficient, it also requires more a complex type model and implementation. If you just want to write a simple
-(de-)serializer without the need for the efficiency and features `serde` offers, `serde_dynamic_typing` can greatly
+Furthermore it can also serve as a simple abstraction layer for `serde`: While `serde` is extremely versatile and
+efficient, it also requires a more complex type model and implementation. If you just want to write a simple
+(de-)serializer without the need for the full efficiency and features `serde` offers, `serde_dynamic_typing` can greatly
 simplify the implementation.
 
 
@@ -58,8 +58,8 @@ is represented as
 ```rust
 AnyValue::Map([
     (
-        AnyValue::Utf8String(Utf8String::new("bytes")),      // <- map key
-        AnyValue::Bytes(Bytes::new(/* value of `bytes` */))  // <- associated value
+        AnyValue::Utf8String(Utf8String::from("bytes")),      // <- map key
+        AnyValue::Bytes(Bytes::from(/* value of `bytes` */))  // <- associated value
     )
 ])
 ```
