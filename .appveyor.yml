@@ -1,5 +1,12 @@
+image:
+  - Visual Studio 2019
+  - Ubuntu2004
+  - macOS
+
 for:
-  - image: Visual Studio 2019
+  - matrix:
+      only:
+        - image: Visual Studio 2019
     environment:
       matrix:
         - TARGET: x86_64-pc-windows-msvc
@@ -9,7 +16,9 @@ for:
       - rustup-init.exe -y --default-toolchain nightly --default-host %TARGET%
       - set PATH=%PATH%;C:\Users\appveyor\.cargo\bin
   
-  - image: Ubuntu2004
+  - matrix:
+      only:
+        - image: Ubuntu2004
     environment:
       matrix:
         - TARGET: x86_64-unknown-linux-gnu
@@ -18,7 +27,9 @@ for:
       - curl https://sh.rustup.rs -sSf -o rustup-init.sh
       - sh rustup-init.sh -y --default-toolchain nightly --default-host %TARGET%
   
-  - image: macOS
+  - matrix:
+      only:
+        - image: macOS
     environment:
       matrix:
         - TARGET: x86_64-apple-darwin
