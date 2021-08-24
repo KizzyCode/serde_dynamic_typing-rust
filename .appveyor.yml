@@ -11,8 +11,6 @@ environment:
 
     - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu2004
       TARGET: x86_64-unknown-linux-gnu
-    - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu2004
-      TARGET: i686-unknown-linux-gnu
 
     - APPVEYOR_BUILD_WORKER_IMAGE: macOS
       TARGET: x86_64-apple-darwin
