@@ -13,10 +13,6 @@ environment:
       TARGET: x86_64-unknown-linux-gnu
     - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu2004
       TARGET: i686-unknown-linux-gnu
-    - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu2004
-      TARGET: x86_64-unknown-linux-musl
-    - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu2004
-      TARGET: i686-unknown-linux-musl
 
     - APPVEYOR_BUILD_WORKER_IMAGE: macOS
       TARGET: x86_64-apple-darwin
@@ -36,6 +32,7 @@ for:
     install:
       - curl https://sh.rustup.rs -sSf -o rustup-init.sh
       - sh rustup-init.sh -y --default-toolchain nightly --default-host $TARGET
+      - source $HOME/.cargo/env
   
   - matrix:
       only:
@@ -43,6 +40,7 @@ for:
     install:
       - curl https://sh.rustup.rs -sSf -o rustup-init.sh
       - sh rustup-init.sh -y --default-toolchain nightly --default-host $TARGET
+      - source $HOME/.cargo/env
 
 build: false
 
